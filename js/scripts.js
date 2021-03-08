@@ -4,6 +4,11 @@ let pokemonRepository = (function () {
     { name: 'Ivysaur', height: 1, types: ['grass', 'psychic'] },
     { name: 'Blastoise', height: 1.6, types: ['steel', 'water'] },
   ];
+
+  function showdetails(pokemon) {
+    console.log(pokemon);
+  }
+
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
     let listpokemon = document.createElement("li");
@@ -12,10 +17,15 @@ let pokemonRepository = (function () {
     button.classList.add("button-class");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
-  }
+    button.addEventListener("click", function(event) {
+      showDetails(pokemon);
+      });
+    }
+
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
+  
   function getAll() {
     return pokemonList;
   }
@@ -27,7 +37,6 @@ let pokemonRepository = (function () {
   };
 
 })();
-
 
 pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
