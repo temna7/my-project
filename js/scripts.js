@@ -5,7 +5,7 @@ let pokemonRepository = (function () {
     { name: 'Blastoise', height: 1.6, types: ['steel', 'water'] },
   ];
 
-  function showdetails(pokemon) {
+  function showDetails(pokemon) {
     console.log(pokemon);
   }
 
